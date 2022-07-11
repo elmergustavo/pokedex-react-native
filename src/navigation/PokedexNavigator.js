@@ -9,8 +9,9 @@ const Stack = createStackNavigator();
 const PokedexNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Pokemon" component={Pokemon} />
       <Stack.Screen name="Pokedex" component={Pokedex} />
+      <Stack.Screen name="Pokemon" component={Pokemon} />
+      
     </Stack.Navigator>
   );
 };
