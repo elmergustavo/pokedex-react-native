@@ -1,11 +1,10 @@
-import { SafeAreaView, Text } from "react-native";
+import { SafeAreaView } from "react-native";
 import React, { useState, useEffect } from "react";
 import { getPokemonsApi, getPokemonDetailsByUrlApi } from "../api/pokemon";
-
+import PokemonList from "../components/PokemonList";
 
 const Pokedex = () => {
   const [pokemons, setPokemons] = useState([]);
-  const [nextUrl, setNextUrl] = useState(null);
   console.log("Pokemons ----> ", pokemons)
 
   useEffect(() => {
@@ -17,7 +16,6 @@ const Pokedex = () => {
   const loadPokemons = async () => {
     try {
       const response = await getPokemonsApi();
-      setNextUrl(response.next);
 
       const pokemonsArray = [];
       for await (const pokemon of response.results) {
@@ -39,7 +37,7 @@ const Pokedex = () => {
   };
   return (
     <SafeAreaView>
-      <Text>Pokedex</Text>
+      <PokemonList pokemons={pokemons} loadPokemons={loadPokemons}/>
     </SafeAreaView>
   );
 };
