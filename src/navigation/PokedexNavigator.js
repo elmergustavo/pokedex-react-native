@@ -14,7 +14,16 @@ const PokedexNavigator = () => {
         component={Pokedex}
         options={{ title: "", headerTransparent: true }}
       />
-      <Stack.Screen name="Pokemon" component={Pokemon} />
+      <Stack.Screen
+        name="Pokemon"
+        component={Pokemon}
+        options={{
+          title: "",
+          headerShown: true,
+          headerTransparent: true,
+          headerShadowVisible: false,
+        }}
+      />
     </Stack.Navigator>
   );
 };
