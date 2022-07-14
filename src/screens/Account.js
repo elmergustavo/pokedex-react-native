@@ -1,12 +1,10 @@
-import { SafeAreaView, Text, View } from 'react-native'
-import React from 'react'
+import React from "react";
+import { View, Text } from "react-native";
+import LoginForm from "../components/Auth/LoginForm";
+import UserData from "../components/Auth/UserData";
 
-const Account = () => {
-  return (
-    <SafeAreaView>
-      <Text>justo,</Text>
-    </SafeAreaView>
-  )
+export default function Account() {
+  const auth = null;
+
+  return <View>{auth ? <UserData /> : <LoginForm />}</View>;
 }
-
-export default Account
