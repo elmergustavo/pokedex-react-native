@@ -28,6 +28,8 @@ const PokemonCard = (props) => {
               #{`${pokemon.order}`.padStart(3, 0)}
             </Text>
             <Text style={styles.name}>{capitalize(pokemon.name)}</Text>
+
+            <View style={styles.shadow} />
             <Image source={{ uri: pokemon.image }} style={styles.image} />
           </View>
         </View>
@@ -69,6 +71,17 @@ const styles = StyleSheet.create({
     right: 2,
     width: 90,
     height: 90,
+  },
+
+  shadow: {
+    height: 120,
+    width: 120,
+    backgroundColor: "#fff",
+    opacity: 0.2,
+    position: "absolute",
+    borderRadius: 60,
+    bottom: -25,
+    right: -25,
   },
 });
 
